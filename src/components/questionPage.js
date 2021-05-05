@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 import { handleAddAnswer } from '../actions/questions'
 import { handleAddUserAnswer } from '../actions/users'
+import history from "../utils/history";
 
 class QuestionPage extends Component{
     state={
@@ -31,6 +32,7 @@ class QuestionPage extends Component{
         }
         if(this.state.toLogin === false){
             return <Redirect to='/login' />
+            history.push(`/questions/${id}`)
         }
 
         return(

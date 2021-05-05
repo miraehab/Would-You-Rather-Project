@@ -13,7 +13,7 @@ class Question extends Component{
                     </div>
                     <div className='question-details'>
                         <h2>Would you rather...</h2>
-                        <Link to={`/question/${id}`} className='question'>
+                        <Link to={`/questions/${id}`} className='question'>
                             <button type='button' className='toQuestion-page'>view Poll</button>
                         </Link>
                     </div>

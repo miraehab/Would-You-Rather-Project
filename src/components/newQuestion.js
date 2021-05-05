@@ -4,11 +4,13 @@ import { Redirect } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import Form from 'react-bootstrap/Form'
 import { handleAddQuestion } from '../actions/questions'
+import history from "../utils/history";
 
 
 class NewQuestion extends Component{
     state={
         toLogin: true,
+        redirectedfrom: '/add',
         optionOne:'',
         optionTwo:''
     }
@@ -26,11 +28,12 @@ class NewQuestion extends Component{
             })
         }
         if(this.state.toLogin === false){
-            return <Redirect to='/login' />
+            return <Redirect to='/login' redirectedfrom="helloo"/>
+            history.push("/add")
         }
         return(
             <div>
-                <h2 className='title'>Wouls you rather...</h2>
+                <h2 className='title'>Would you rather...</h2>
                 <Form className='add-new-question'>
                     <Form.Group controlId="formBasic">
                         <Form.Label>Option One</Form.Label>

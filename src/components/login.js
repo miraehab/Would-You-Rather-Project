@@ -4,6 +4,7 @@ import { Dropdown } from 'react-bootstrap';
 import { DropdownButton } from 'react-bootstrap';
 import { setAuthedUser } from '../actions/authedUser'
 import { Redirect } from 'react-router-dom'
+import history from "../utils/history";
 
 class Login extends Component{
     state={
@@ -18,7 +19,7 @@ class Login extends Component{
 
     render(){
         if (this.state.toHome === true) {
-            return <Redirect to='/' />
+            return <Redirect to={history.location.pathname} />
         }
         return(
             <div className='login-box'>
@@ -47,11 +48,12 @@ class Login extends Component{
     }
 }
 
-function mapStateToPorps({users, authedUser}){
+function mapStateToPorps({users, authedUser}, { redirectedfrom }){
     return {
         authedUser,
         users,
-        usersNames: Object.keys(users)
+        usersNames: Object.keys(users),
+        redirectedfrom,
     }
 }
 

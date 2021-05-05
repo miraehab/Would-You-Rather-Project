@@ -17,7 +17,7 @@ class Nav extends Component{
               </NavLink>
             </li>
             <li className='nav-box-option'>
-              <NavLink to='/new' activeClassName='nav-option' style={{ textDecoration: 'none' }}>
+              <NavLink to='/add' activeClassName='nav-option' style={{ textDecoration: 'none' }}>
                 New Question
               </NavLink>
             </li>

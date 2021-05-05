@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import UserCard from './userCard'
 import { Redirect } from 'react-router-dom'
+import history from "../utils/history";
 
 class LeaderBoard extends Component{
     state={
@@ -15,6 +16,7 @@ class LeaderBoard extends Component{
         }
         if(this.state.toLogin === false){
             return <Redirect to='/login' />
+            history.push("/leaderboard")
         }
 
         const { users, usersIDs } = this.props

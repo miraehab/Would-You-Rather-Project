@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Question from './question'
 import { Redirect } from 'react-router-dom'
+import history from "../utils/history";
 
 
 class Home extends Component{
@@ -19,6 +20,7 @@ class Home extends Component{
         }
         if(this.state.toLogin === false){
             return <Redirect to='/login' />
+            history.push("/")
         }
         let user = this.props.authedUser
         return(
